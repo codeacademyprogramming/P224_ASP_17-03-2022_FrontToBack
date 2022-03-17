@@ -1,0 +1,24 @@
+﻿@using P224DbContext.Models;
+@using P224DbContext.ViewModels;
+@model HomeVM
+
+<ul>
+    @foreach (Student student in Model.Students)
+    {
+        <li>@student.Name @student.SurName</li>
+    }
+</ul>
+
+<ul>
+    @foreach (Group group in Model.Groups)
+    {
+        <li>@group.Id @group.Name</li>
+    }
+</ul>
+
+<ul>
+    @foreach (StudentGroup studentGroup in Model.StudentGroups)
+    {
+        <li>@studentGroup.Group.Name @studentGroup.Student.Name @studentGroup.Student.SurName</li>
+    }
+</ul>
